@@ -1,4 +1,4 @@
-
+/* styles.css */
 
 body {
     font-family: 'Arial', sans-serif;
@@ -18,10 +18,40 @@ header {
     text-align: center;
     color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 h1 {
     margin: 0;
+}
+
+#search-bar {
+    display: flex;
+    justify-content: space-between; /* Add Flexbox to space the input and button */
+    align-items: center;
+    width: 300px; /* Set a fixed width or adjust as needed */
+    margin: 20px;
+}
+
+#city-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+#search-button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    background-color: #217dbb;
 }
 
 .weather-container {
@@ -39,4 +69,4 @@ h1 {
     align-items: center;
 }
 
-
+/* Add additional styling as needed */
