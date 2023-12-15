@@ -21,7 +21,12 @@ Sunny Buddy is a weather app that provides current and 5-day forecast informatio
 
 ## How to Use
 
-1. Clone the repository:
+1. GitHub Live: 
+
+
+
+
+2. Clone the repository:
 
    ```bash
    git clone https://github.com/your-username/sunny-buddy.git
