@@ -4,9 +4,17 @@ const currentWeather = document.getElementById("current-weather");
 const forecastContainer = document.getElementById("forecast-container");
 const searchHistory = document.getElementById("search-history");
 
+
 const apiKey = "03bc0063493c0df8066d1942fcacc8f2";
 const weatherApiUrl = "https://api.openweathermap.org/data/2.5/weather";
 const forecastApiUrl = "https://api.openweathermap.org/data/2.5/forecast";
+const iconUrl = `https://openweathermap.org/img/wn/10d@2x.png`;
+
+
+const apiKey = "03bc0063493c0df8066d1942fcacc8f2";
+const weatherApiUrl = "https://api.openweathermap.org/data/2.5/weather";
+const forecastApiUrl = "https://api.openweathermap.org/data/2.5/forecast";
+
 
 let searchHistoryList = JSON.parse(localStorage.getItem('searchHistory')) || [];
 
@@ -29,11 +37,13 @@ function fetchWeather(cityName) {
     fetch(`${weatherApiUrl}?q=${cityName}&appid=${apiKey}&units=metric`)
         .then(response => response.json())
         .then(data => {
+            console.log("Current Weather Data (JSON):", JSON.stringify(data, null, 2)); 
             renderWeatherData(data);
             return fetch(`${forecastApiUrl}?q=${cityName}&appid=${apiKey}&units=metric`);
         })
         .then(response => response.json())
         .then(data => {
+            console.log("5 Day Weather Data (JSON):", JSON.stringify(data, null, 2)); 
             renderForecastData(data);
             addToSearchHistory(cityName);
         })
@@ -66,7 +76,10 @@ function renderForecastData(forecastData) {
         const date = new Date(forecast.dt * 1000);
         const day = date.toISOString().split('T')[0]; // Get the date in YYYY-MM-DD format
 
-        // If this day hasn't been processed yet, use this forecast as the day's representative
+        const iconUrl = `http://openweathermap.org/img/wn/{forecast.weather[0].icon}.png`;
+
+    
+
         if (!dailyForecast[day]) {
             dailyForecast[day] = forecast;
         }
@@ -84,6 +97,10 @@ function renderForecastData(forecastData) {
         forecastElement.innerHTML = `
             <div class="card">
                 <div class="card-body">
+
+                <img src="${iconUrl}" alt="Weather Icon" class="weather-icon">
+
+
                     <h5 class="card-title">${new Date(forecast.dt * 1000).toDateString()}</h5>
                     <p class="card-text">Temperature: ${forecast.main.temp}°C</p>
                     <p class="card-text">Humidity: ${forecast.main.humidity}%</p>
@@ -102,6 +119,29 @@ function addToSearchHistory(cityName) {
     if (!searchHistoryList.includes(cityName)) {
         searchHistoryList.push(cityName);
         localStorage.setItem('searchHistory', JSON.stringify(searchHistoryList));
+
+        updateSearchHistoryUI();
+
         // Optionally, update the search history UI here
+
     }
 }
+
+function updateSearchHistoryUI() {
+    const searchHistoryContainer = document.getElementById('search-history');
+    searchHistoryContainer.innerHTML = ''; // Clear existing items
+
+    searchHistoryList.forEach(city => {
+        const cityElement = document.createElement('li');
+        cityElement.textContent = city;
+        searchHistoryContainer.appendChild(cityElement);
+    });
+}
+
+function loadSearchHistory() {
+    searchHistoryList = JSON.parse(localStorage.getItem('searchHistory')) || [];
+    updateSearchHistoryUI();
+}
+
+// Call this function when the page loads
+loadSearchHistory();
