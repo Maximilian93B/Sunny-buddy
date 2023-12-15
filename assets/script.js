@@ -151,3 +151,27 @@ function renderWeatherData(weatherData) {
 }
 
 loadSearchHistory();
+
+ // Modal 
+
+ // Get the modal
+var modal = document.getElementById("welcomeModal");
+var span = document.getElementsByClassName("close")[0];
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// Open the modal when the page loads
+window.onload = function() {
+    modal.style.display = "block";
+}
+
+// Close the modal 
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+

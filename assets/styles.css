@@ -156,3 +156,67 @@ h1 {
     background-color: #f0f0f0; /* Slight change in background on hover */
     color: #3498db; /* Change text color on hover */
 }
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top of everything */
+    left: 0;
+    top: 0;
+    width: 30%; /* Adjust the width as needed */
+    height: 30%; /* Adjust the height as needed */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: transparent; /* Transparent background */
+}
+
+/* Modal Content */
+.modal-content {
+    position: flex;
+    display: block;
+    justify-content: center;
+    align-items: start;
+    background-color: #fff;
+    margin: 5% auto; /* Adjust the top margin as needed */
+    padding: 20px;
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Box shadow for the bubble effect */
+    text-align: center; /* Center the content */
+    font-family: "Poppins", sans-serif;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
