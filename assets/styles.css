@@ -9,8 +9,8 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: #f0f0f0;
-    background-image: url(./pexels-ithalu-dominguez-907485.jpg);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+ 
     background-size: cover;
     background-position: center;
 }
@@ -73,4 +73,34 @@ h1 {
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+
+/* New styles for forecast cards */
+.forecast-card {
+    background-color: #fff; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    margin: 15px;
+    padding: 20px; 
+    width: 200px; 
+    text-align: center; 
+}
+
+.forecast-card .card-title {
+    margin: 10px 0; 
+    font-size: 1.2em; 
+    color: #333;
+}
+
+.forecast-card .card-text {
+    margin: 5px 0; 
+    font-size: 1em; 
+}
+
+
+.weather-icon {
+    width: 50px; 
+    height: auto;
+    margin-bottom: 10px;
 }
