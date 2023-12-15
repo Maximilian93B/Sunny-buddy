@@ -23,7 +23,7 @@ Sunny Buddy is a weather app that provides current and 5-day forecast informatio
 
 1. GitHub Live: 
 
-
+ https://maximilian93b.github.io/Sunny-buddy/
 
 
 2. Clone the repository:
