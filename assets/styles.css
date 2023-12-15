@@ -75,7 +75,6 @@ h1 {
     align-items: center;
 }
 
-
 /* New styles for forecast cards */
 .forecast-card {
     background-color: #fff; 
@@ -104,3 +103,38 @@ h1 {
     height: auto;
     margin-bottom: 10px;
 }
+
+
+.forecast-card {
+    background-color: #fff; /
+    border-radius: 10px; /
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    margin: 15px; /* Margin for spacing between cards */
+    padding: 20px; /* Padding inside the cards */
+    width: 200px; /* Fixed width for the cards */
+    text-align: center; /* Center align the text */
+}
+
+.forecast-card .card-title {
+    margin: 10px 0; /* Margin for the title */
+    font-size: 1.2em; /* Slightly larger font size for the title */
+    color: #333; /* Darker text color for contrast */
+}
+
+.forecast-card .card-text {
+    margin: 5px 0; /* Spacing between text lines */
+    font-size: 1em; /* Regular font size for text */
+}
+
+/* Responsive design for the forecast cards */
+@media (max-width: 600px) {
+    .flex-container {
+        flex-direction: column; /* Stack the cards vertically on small screens */
+    }
+
+    .forecast-card {
+        width: 100%; /* Full width cards on small screens */
+        margin: 10px 0; /* Adjusted margin for smaller screens */
+    }
+}
+
